@@ -1,6 +1,7 @@
 package com.example.cps731lab4;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,12 +17,12 @@ import java.util.ArrayList;
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
     private ArrayList<String> mTitles= new ArrayList<>();
     private ArrayList<String> mDescriptions = new ArrayList<>();
-    private Context mcontext;
+    private Context mContext;
 
     public RecyclerViewAdapter(Context context,ArrayList<String> titles, ArrayList<String> desc){
         mTitles=titles;
         mDescriptions=desc;
-        mcontext=context;
+        mContext=context;
 
 
     }
@@ -34,9 +35,20 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
+        Log.d("test","ttt");
     holder.title.setText(mTitles.get(position));
     holder.description.setText(mDescriptions.get(position));
+    holder.parentLayout.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent(mContext,DetailActivity.class);
+
+            intent.putExtra("item_title",mTitles.get(position));
+            intent.putExtra("item_desc",mDescriptions.get(position));
+            mContext.startActivity(intent);
+        }
+    });
     }
 
     @Override
