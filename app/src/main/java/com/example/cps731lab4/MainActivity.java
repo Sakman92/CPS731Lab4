@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
     private ArrayList<String> mTitles = new ArrayList<>();
     private ArrayList<String> mDescriptions = new ArrayList<>();
+    private ArrayList<String> mImageURLs=new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,18 +23,24 @@ public class MainActivity extends AppCompatActivity {
     }
     private void initList(){
 
-        mTitles.add("Title 1");
-        mDescriptions.add("Desc 1");
-        mTitles.add("Title 2");
-        mDescriptions.add("Desc 2");
-        mTitles.add("Title 3");
-        mDescriptions.add("Desc 3");
-        mTitles.add("Title 4");
-        mDescriptions.add("Desc 4");
-        mTitles.add("Title 5");
-        mDescriptions.add("Desc 5");
-        mTitles.add("Title 6");
-        mDescriptions.add("Desc 6");
+        mTitles.add("Ana");
+        mDescriptions.add("Ana’s versatile arsenal allows her to affect heroes all over the battlefield. Her Biotic Rifle rounds and Biotic Grenades heal allies and damage or impair enemies; her sidearm tranquilizes key targets, and Nano Boost gives one of her comrades a considerable increase in power.");
+        mImageURLs.add("https://d1u1mce87gyfbn.cloudfront.net/hero/ana/hero-select-portrait.png");
+        mTitles.add("Ashe");
+        mDescriptions.add("Ashe quickly fires her rifle from the hip or uses her weapon’s aim-down sights to line up a high damage shot. She blasts enemies by throwing dynamite, and her coach gun packs enough punch to put some distance between her and her foes. And Ashe is not alone, as she can call on her omnic ally Bob, to join the fray when the need arises.");
+        mImageURLs.add("https://d1u1mce87gyfbn.cloudfront.net/hero/ashe/hero-select-portrait.png");
+        mTitles.add("Brigitte");
+        mDescriptions.add("Brigitte specializes in armor. She can throw Repair Packs to heal teammates, or automatically heal nearby allies when she damages foes with her Flail. Her Flail is capable of a wide swing to strike multiple targets, or a Whip Shot that stuns an enemy at range. When entering the fray, Barrier Shield provides personal defense while she attacks enemies with Shield Bash. Brigitte’s ultimate ability, Rally, gives her a substantial short-term boost of speed and provides long-lasting armor to all her nearby allies.");
+        mImageURLs.add("https://d1u1mce87gyfbn.cloudfront.net/hero/brigitte/hero-select-portrait.png");
+        mTitles.add("Mercy");
+        mDescriptions.add("Mercy’s Valkyrie Suit helps keep her close to teammates like a guardian angel; healing, resurrecting or strengthening them with the beams emanating from her Caduceus Staff.");
+        mImageURLs.add("https://d1u1mce87gyfbn.cloudfront.net/hero/mercy/hero-select-portrait.png");
+        mTitles.add("Moira");
+        mDescriptions.add("Moira’s biotic abilities enable her to contribute healing or damage in any crisis. While Biotic Grasp gives Moira short-range options, her Biotic Orbs contribute longer-range, hands-off damage and healing; she can also Fade to escape groups or remain close to allies in need of support. Once she’s charged Coalescence, Moira can save multiple allies from elimination at once or finish off weakened enemies.");
+        mImageURLs.add("https://d1u1mce87gyfbn.cloudfront.net/hero/moira/hero-select-portrait.png");
+        mTitles.add("Widowmaker");
+        mDescriptions.add("Widowmaker equips herself with whatever it takes to eliminate her targets, including mines that dispense poisonous gas, a visor that grants her squad infra-sight, and a powerful sniper rifle that can fire in fully-automatic mode.");
+        mImageURLs.add("https://d1u1mce87gyfbn.cloudfront.net/hero/widowmaker/hero-select-portrait.png");
 
         initRecyclerView();
 
@@ -42,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
             RecyclerView recyclerView = findViewById(R.id.rvList);
             recyclerView.setLayoutManager(new LinearLayoutManager(this));
-            RecyclerViewAdapter adapter=new RecyclerViewAdapter(this,mTitles,mDescriptions);
+            RecyclerViewAdapter adapter=new RecyclerViewAdapter(this,mTitles,mDescriptions,mImageURLs);
             recyclerView.setAdapter(adapter);
 
     }

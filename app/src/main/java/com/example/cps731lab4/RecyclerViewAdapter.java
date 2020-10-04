@@ -17,11 +17,13 @@ import java.util.ArrayList;
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
     private ArrayList<String> mTitles= new ArrayList<>();
     private ArrayList<String> mDescriptions = new ArrayList<>();
+    private ArrayList<String> mImageURLs=new ArrayList<>();
     private Context mContext;
 
-    public RecyclerViewAdapter(Context context,ArrayList<String> titles, ArrayList<String> desc){
+    public RecyclerViewAdapter(Context context,ArrayList<String> titles, ArrayList<String> desc,ArrayList<String> imageURLs){
         mTitles=titles;
         mDescriptions=desc;
+        mImageURLs=imageURLs;
         mContext=context;
 
 
@@ -46,6 +48,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
             intent.putExtra("item_title",mTitles.get(position));
             intent.putExtra("item_desc",mDescriptions.get(position));
+            intent.putExtra("item_img",mImageURLs.get(position));
             mContext.startActivity(intent);
         }
     });

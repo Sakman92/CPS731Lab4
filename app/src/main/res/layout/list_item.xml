@@ -10,13 +10,15 @@
         android:id="@+id/txtId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textStyle="bold" />
+        android:text="@string/textview3"
+        android:textColor="#3F51B5"
+        android:textSize="24sp" />
 
     <TextView
         android:id="@+id/txtDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:lineSpacingExtra="8sp"
+        android:text="@string/textview4" />
 
 </LinearLayout>
