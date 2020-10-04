@@ -18,7 +18,7 @@
         android:id="@+id/txtDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:lineSpacingExtra="8sp"
+        android:maxLines="2"
         android:text="@string/textview4" />
 
 </LinearLayout>
