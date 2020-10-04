@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+import android.util.Log;
 
 import java.util.ArrayList;
 
@@ -21,6 +22,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         mTitles=titles;
         mDescriptions=desc;
         mcontext=context;
+
 
     }
     @NonNull
@@ -39,7 +41,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public int getItemCount() {
-        return 0;
+        return mTitles.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
